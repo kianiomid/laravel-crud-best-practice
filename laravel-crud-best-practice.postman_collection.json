@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "c0a46522-c75e-439f-8189-3d90dbcf9b8c",
+		"name": "laravel-crud-best-practice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7312407"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "market",
+					"item": [
+						{
+							"name": "markets list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{laravel-crud.base-practice.local}}/admin/markets",
+									"host": [
+										"{{laravel-crud.base-practice.local}}"
+									],
+									"path": [
+										"admin",
+										"markets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "market save",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "test name",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "test description",
+											"type": "text"
+										},
+										{
+											"key": "enabled",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{laravel-crud.base-practice.local}}/admin/markets",
+									"host": [
+										"{{laravel-crud.base-practice.local}}"
+									],
+									"path": [
+										"admin",
+										"markets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "market details",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{laravel-crud.base-practice.local}}/admin/markets/6",
+									"host": [
+										"{{laravel-crud.base-practice.local}}"
+									],
+									"path": [
+										"admin",
+										"markets",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "market update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "test-Update",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "test name-Update",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "test description-Update",
+											"type": "text"
+										},
+										{
+											"key": "enabled",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{laravel-crud.base-practice.local}}/admin/markets/3",
+									"host": [
+										"{{laravel-crud.base-practice.local}}"
+									],
+									"path": [
+										"admin",
+										"markets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "market delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{laravel-crud.base-practice.local}}/admin/markets/3",
+									"host": [
+										"{{laravel-crud.base-practice.local}}"
+									],
+									"path": [
+										"admin",
+										"markets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

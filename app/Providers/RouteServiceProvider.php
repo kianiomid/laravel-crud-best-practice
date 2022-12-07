@@ -26,16 +26,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        parent::boot();
         $this->configureRateLimiting();
-
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-        });
     }
 
     /**
@@ -48,5 +40,18 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+    }
+
+    public function map(): void
+    {
+        $this->mapAdminAPIRoutes();
+    }
+
+    protected function mapAdminAPIRoutes(): self
+    {
+        Route::prefix('api/v1/admin')
+            ->middleware('api')
+            ->group(base_path('routes/api/v1/admin.php'));
+        return $this;
     }
 }
